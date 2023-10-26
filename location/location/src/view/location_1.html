@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet Control Geocoder</title>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no initial-scale=1, maximum-scale=1"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@latest/dist/leaflet-src.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+      #map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    
+
+    <script type="text/javascript">
+        const map = L.map('map'); 
+        // Initializes map
+
+        map.setView([51.505, -0.09], 16); 
+        // Sets initial coordinates and zoom level
+		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
+            { 
+                attribution: 'Leaflet &copy; ' 
+                + mapLink 
+                + ', contribution', 
+                maxZoom: 19 
+            }
+        ).addTo(map);
+        // Sets map data source and associates with map
+		var taxiIcon = L.icon({
+			iconUrl: 'assets/icons/epingle.png',
+            shadowUrl: 'assets/icons/leaf-shadow.png',
+			iconSize:     [38, 65], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [18, 60], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+		})
+        let marker;
+        var lt, lg;
+
+            
+        navigator.geolocation.watchPosition(success, error);
+        searchUser();
+        
+        function success(pos) {
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            localStorage.setItem("latitud", lat);
+            localStorage.setItem("longitude", lng);
+            const accuracy = pos.coords.accuracy;
+
+            if (marker) {
+                map.removeLayer(marker);
+            }
+            //marker = L.marker([lat, lng], { icon: taxiIcon }).addTo(map);
+            //marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+            marker = L.marker([lat, lng]).addTo(map);
+            console.log(lat +" et "+lng);
+            map.setView([lat, lng]);
+            
+        }
+
+        function error(err) {
+            if (err.code === 1) {
+                alert("Please allow geolocation access");
+            } else {
+                alert("Cannot get current location");
+            }
+        }
+
+        function searchUser(){
+            var geocoder = L.Control.Geocoder.nominatim();
+            if (typeof URLSearchParams !== 'undefined' && location.search) {
+                // parse /?geocoder=nominatim from URL
+                var params = new URLSearchParams(location.search);
+                var geocoderString = params.get('geocoder');
+                if (geocoderString && L.Control.Geocoder[geocoderString]) {
+                    console.log('Using geocoder', geocoderString);
+                    geocoder = L.Control.Geocoder[geocoderString]();
+                } else if (geocoderString) {
+                    console.warn('Unsupported geocoder', geocoderString);
+                }
+            }
+
+            var control = L.Control.geocoder({
+                query: 'Moon',
+                placeholder: 'Search here...',
+                geocoder: geocoder
+            }).addTo(map);
+            var marker;
+
+            setTimeout(function() {
+                control.setQuery('Earth');
+            }, 12000);
+
+
+        }
+
+
+        lt = Number(localStorage.getItem("latitud"));
+        lg = Number(localStorage.getItem("longitude"));
+        mouveEpingle();
+        routting();
+
+        function routting(){
+            /*var newMarker;
+            map.on('click', function (e) {
+                console.log(e)
+                newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+                newMarker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+                if (newMarker && marker) {
+                    map.removeLayer(newMarker);
+                    map.removeLayer(marker);
+                }
+                L.Routing.control({
+                    waypoints: [
+                        L.latLng(lt, lg),
+                        L.latLng(e.latlng.lat, e.latlng.lng)
+                    ]
+                }).addTo(map);
+            });*/
+        }
+
+        function mouveEpingle(){
+            marker = L.marker([lt, lg]).addTo(map);
+            marker.on("click", function() {
+                console.log(lt +" et "+lg);
+                var pos = map.latLngToLayerPoint(marker.getLatLng());
+                pos.y -= 25;
+                var fx = new L.PosAnimation();
+    
+                fx.once('end',function() {
+                    pos.y += 25;
+                    fx.run(marker._icon, pos, 0.8);
+                });
+    
+                fx.run(myPositionMarker._icon, pos, 0.3);
+            });
+        }
+
+            
+    </script>
+  </body>
+</html>
