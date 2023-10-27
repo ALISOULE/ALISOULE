@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrousel avec Indicateurs, Contrôles et Contrôle Automatique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .cadreCarousel {
+            position: relative;
+            display: flex;
+            width: 300px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            width: 300px;
+            height: 200px;
+            margin: 0px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .controls {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0 10px;
+            border: none;
+            border-radius: 2rem;
+            width: 1.3rem;
+            height: 1.3rem;
+            
+        }
+
+        .indicators {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            background-color: #333;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .indicator.active {
+            background-color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+    <div class="cadreCarousel">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">Slide 1</div>
+                <div class="carousel-item">Slide 2</div>
+                <div class="carousel-item">Slide 3</div>
+                <div class="carousel-item">Slide 4</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="btn" onclick="prevSlide()">
+                <i class="fa fa-chevron-left "></i>
+            </button>
+            <button class="btn" onclick="nextSlide()">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="indicators"></div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const indicatorsContainer = document.querySelector('.indicators');
+        const container = document.querySelector('.carousel');
+        let autoSlideInterval;
+
+        function createIndicators() {
+            for (let i = 0; i < items.length; i++) {
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator';
+                indicator.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        function updateCarousel() {
+            container.style.transform = `translateX(-${currentIndex * 320}px)`;
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                nextSlide();
+            }, 3000); // Change de diapositive toutes les 3 secondes (ajustez selon vos préférences)
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        createIndicators();
+        updateCarousel();
+        startAutoSlide(); // Démarre le contrôle automatique
+    </script>
+</body>
+</html>

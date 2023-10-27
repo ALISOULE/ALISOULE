@@ -1,0 +1,76 @@
+{
+    "ville": [
+        {
+            "dakar": [
+                {
+                    "region_nom": "Pikine",
+                    "region_adresse_map": "Adresse de Pikine ici",
+                    "Tiers": [
+                        {
+                            "Nom": "Nom du Tiers 3",
+                            "service": "Service du Tiers 3",
+                            "Adress": "Adresse du Tiers 3"
+                        },
+                        {
+                            "Nom": "Nom du Tiers 4",
+                            "service": "Service du Tiers 4",
+                            "Adress": "Adresse du Tiers 4"
+                        }
+                    ]
+                },
+                {
+                    "region_nom": "Guédiawaye",
+                    "region_adresse_map": "Adresse de Guédiawaye ici",
+                    "Tiers": [
+                        {
+                            "Nom": "Nom du Tiers 5",
+                            "service": "Service du Tiers 5",
+                            "Adress": "Adresse du Tiers 5"
+                        },
+                        {
+                            "Nom": "Nom du Tiers 6",
+                            "service": "Service du Tiers 6",
+                            "Adress": "Adresse du Tiers 6"
+                        }
+                    ]
+                },
+                {
+                    "region_nom": "Rufisque",
+                    "region_adresse_map": "Adresse de Rufisque ici",
+                    "Tiers": [
+                        {
+                            "Nom": "Nom du Tiers 7",
+                            "service": "Service du Tiers 7",
+                            "Adress": "Adresse du Tiers 7"
+                        },
+                        {
+                            "Nom": "Nom du Tiers 8",
+                            "service": "Service du Tiers 8",
+                            "Adress": "Adresse du Tiers 8"
+                        }
+                    ]
+                },
+                {
+                    "region_nom": "Diamniadio",
+                    "region_adresse_map": "Adresse de Diamniadio ici",
+                    "Tiers": []
+                }
+            ],
+            "thies": [
+                {
+                    "nom_region_thies": "Grand-Dakar",
+                    "Adress_regions_thies": "...",
+                    "Tiers":[
+                        {
+                            "Nom":"...",
+                            "service": "...",
+                            "Adress": "..."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+

@@ -43,7 +43,7 @@ $(document).ready(function(){
         //console.log(lat, lng);
         map.setView([latitudeCc, longitudeCc]);
         // Set map focus to current user position
-        marker.bindPopup("<div class='logo_name'><b class='name_logo'>Car Care</b></div><br> <div class='image logo_image'><img src='assets/icons/logo_carcar.png' alt=''></div> <br><span>Voici la position de Car Care</span>.<br><small class='bienvenu'>Veuillez choisir un des services proposé ?</small> ").openPopup();
+        marker.bindPopup("<div class='logo_name'><b class='name_logo'>Car Care</b></div><br> <div class='image logo_image'><img src='assets/icons/logo_carcar.png' alt=''></div> <br><div class='bottom_card'><span>Voici la position de Car Care</span>.<br><small class='bienvenu'>Veuillez choisir un des services proposé ?</small> </div>").openPopup();
 
 
         

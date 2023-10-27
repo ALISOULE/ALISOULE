@@ -1,0 +1,429 @@
+::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#191a19), to(#2b2c29));
+    box-shadow: inset 2px 2px 2px rgba(231, 231, 231, 0.25), inset -2px -2px 2px rgba(243, 243, 243, 0.25)
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff57;
+    border-radius: 10px;
+    background: linear-gradient(to right, #98969d6d, #86828f7a 1px, #b6b6b67a 1px, #64646478)
+}
+
+
+/********** Template CSS **********/
+:root {
+    --primary: #EB1616;
+    --secondary: #191C24;
+    --light: #6C7293;
+    --dark: #000000;
+    /*colore */
+    --color-white: hsl(252, 30%, 100%);
+    --color-light: hsl(0, 0%, 80%);
+    --color-gray: hsl(249, 4%, 31%);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-scondary: hsl(252, 100%, 90%);
+    --color-success: hsl(120, 95%, 65%);
+    --color-active-patielle: hsl(61, 100%, 50%);
+    --color-danger: hsl(0, 100%, 50%);
+    --color-deconnect: hsl(0, 0%, 0%);
+    --color-deconnect-patielle: hsl(0, 100%, 50%);
+    --color-dark: hsl(252, 30%, 17%);
+    --color-black: hsl(252, 30%, 10%);
+    --color-black-light: hsl(0, 0%, 17%);
+    --color-transparent-with: #ffffff80;
+    --color-gris: rgba(88, 83, 83, 0.219);
+    --color-gris-transparant: rgba(88, 83, 83, 0);
+
+    --color-client-visiteur: #fff;
+    --color-client-lambdat: #ff7300;
+    --color-client-beta: #ffe600;
+    --color-client-omega: #00ff80;
+    --color-client-alpha: #59ff00;
+    --color-client-assidu: #001aff;
+    --color-client-bg: rgb(255, 255, 255);
+
+    --statut-color-lambda: rgb(255, 251, 0);
+    --statut-color-omega: #59ff00;
+    --statut-color-beta: rgb(0, 247, 255);
+    --statut-color-apha: #c800ff;
+
+    --colore_chartjs_potentienl_client_A: rgba(0, 255, 0, 0.315);
+    --colore_chartjs_potentienl_client_B: rgba(166, 255, 0, 0.315);
+    --colore_chartjs_potentienl_client_C: rgba(251, 255, 0, 0.315);
+    --colore_chartjs_potentienl_client_D: rgba(255, 136, 0, 0.315);
+    --colore_chartjs_potentienl_client_E: rgba(255, 0, 0, 0.315);
+    
+
+
+    --primary: #EB1616;
+    --secondary: rgb(25, 28, 36);
+    --secondary-gride: rgba(25, 28, 36, 0.761);
+    --light: #6C7293;
+    --dark: #000000;
+
+    /*background*/
+    ---background-reverse: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.665),
+        rgba(67, 67, 67, 0.534),
+        rgba(255, 255, 255, 0.534)
+    );
+    ---background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.786),
+        rgba(32, 30, 30, 0.653),
+        rgba(255, 255, 255, 0.534)
+    );
+    /*---background-card: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.665),
+        rgba(25, 28, 36, 0.761),
+        rgba(25, 28, 36, 0.761)
+    );*/
+
+    ---background-card: linear-gradient( 
+        to bottom, 
+        rgb(0 0 0 / 0%), 
+        rgb(25 28 36), 
+        rgb(25 28 36) 
+    );
+    ---background-card_bottom_top: linear-gradient( 
+        to top, 
+        rgb(0 0 0 / 0%), 
+        rgb(25 28 36), 
+        rgb(25 28 36) 
+    );
+
+    ---top_client_background: linear-gradient(
+        234deg,
+        rgba(2, 0, 36, 0.757) 0%, 
+        rgba(9, 9, 121, 0.583) 39%, 
+        rgba(0, 213, 255, 0.196) 100%
+    );
+    ---background_liste_table: linear-gradient(
+        234deg, 
+        rgb(0 0 0 / 0%), 
+        rgba(0, 68, 255, 0.12), 
+        rgba(0, 68, 255, 0.25) 
+    );
+    ---background_liste_table_2: linear-gradient(
+        -234deg, 
+        rgb(0 0 0 / 0%), 
+        rgba(0, 68, 255, 0.12), 
+        rgba(0, 68, 255, 0.25) 
+    );
+    ---background_liste_table_3: linear-gradient(
+        -234deg, 
+        rgb(0 0 0 / 0%), 
+        rgba(0, 255, 51, 0.12), 
+        rgba(0, 255, 51, 0.25) 
+    );
+    ---background_liste_table_4: linear-gradient(
+        -234deg, 
+        rgb(0 0 0 / 0%), 
+        rgba(255, 234, 0, 0.12), 
+        rgba(255, 234, 0, 0.25) 
+    );
+    ---background_liste_table_2_op: linear-gradient(
+        234deg, 
+        rgb(0 0 0 / 0%), 
+        rgba(0, 68, 255, 0.12), 
+        rgba(0, 68, 255, 0.25) 
+    );
+    ---background_liste_table_3_op: linear-gradient(
+        234deg, 
+        rgb(0 0 0 / 0%), 
+        rgba(0, 255, 51, 0.12), 
+        rgba(0, 255, 51, 0.25) 
+    );
+    ---background_liste_table_4_op: linear-gradient(
+        234deg, 
+        rgb(0 0 0 / 0%), 
+        rgba(255, 234, 0, 0.12), 
+        rgba(255, 234, 0, 0.25) 
+    );
+
+    ---cadre_client_background: linear-gradient(
+        0deg, 
+        rgba(2, 0, 36, 0.845) 0%,
+        rgba(9, 9, 121, 0.498) 50%, 
+        rgba(0, 213, 255, 0.102) 70%
+    );
+
+    ---background-card_bg: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.761),
+        rgba(25, 28, 36, 0.883),
+        rgba(25, 28, 36, 0.841)
+    );
+
+    ---background-btn-navigation: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.583),
+        rgba(14, 16, 20, 0.761),
+        rgba(25, 28, 36, 0.885)
+    );
+
+    ---background-card_carousel_1: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(14, 16, 20, 0.761),
+        rgba(25, 28, 36, 0.761)
+    );
+
+
+    ---background-bg-secondary: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.665),
+        rgba(0, 0, 0, 0.835),
+        rgba(9, 10, 13, 0.661),
+        rgba(14, 14, 15, 0.915)
+
+    );
+
+    --background-night: linear-gradient(
+      to right,
+      rgba(54, 45, 45, 0.854),
+      rgba(31, 29, 29, 0.886),
+      rgba(0, 0, 0, 0.836)
+    );
+    ---background-gris-transparen: linear-gradient(
+      to bottom,
+      rgba(158, 158, 158, 0.471),
+      rgba(31, 29, 29, 0.534),
+      rgba(0, 0, 0, 0.89)
+    );
+  
+    ---background-gris-transparen-top: linear-gradient(
+      to bottom,
+      rgba(88, 83, 83, 0.219),
+      rgba(31, 29, 29, 0.735),
+      rgba(0, 0, 0, 0.89)
+    );
+  
+    ---background-sidebarheder: linear-gradient(
+          to bottom,
+          rgb(40, 42, 87),
+          rgb(29, 34, 65),
+          rgb(26 22 42)
+          );
+  
+    ---background-messageMe: linear-gradient(
+          to bottom,
+          rgb(54, 45, 45),
+          rgb(31, 29, 29),
+          rgb(0, 0, 0)
+          );
+  
+    ---background-messageYou: linear-gradient(
+          to bottom,
+          rgb(40, 42, 87),
+          rgb(29, 34, 65),
+          rgb(26 22 42)
+          );
+  
+    ---background-bottom: linear-gradient(
+            to bottom,
+            rgb(54, 45, 45),
+            rgb(31, 29, 29),
+            rgb(0, 0, 0)
+    );
+
+    ---background_top: linear-gradient(
+        to top,
+        rgb(54, 45, 45),
+        rgba(25, 23, 23, 0.82),
+        rgb(0, 0, 0)
+    );
+  
+    ---background-hover: linear-gradient(
+            to bottom,
+            rgb(54, 45, 45),
+            rgb(31, 29, 29),
+            rgb(35, 85, 25)
+          );
+    --background-ide:linear-gradient(
+        to bottom,
+        rgb(54, 45, 45),
+        rgb(31, 29, 29),
+        rgb(1, 150, 135)
+      );
+    --background-ide-option:linear-gradient(
+        to top,
+        rgb(1, 150, 135),
+        rgb(54, 45, 45),
+        rgb(31, 29, 29)
+      );
+  
+    ---background-for-blur : rgba(103, 103, 103, 0.512);
+  
+    --background_header: #000000;
+    --background-black-transparant: #00000072;
+    --background_btn_nave: #023004;
+    --background_btn_nave1: #019688;
+  
+    ---background-top: linear-gradient(
+            to bottom,
+            rgb(159, 152, 152),
+            rgb(31, 29, 29),
+            rgb(38, 38, 38)
+            );
+    ---background-button-follow: linear-gradient(
+              to left,
+              rgb(45, 52, 54),
+              rgb(31, 29, 29),
+              rgb(0, 0, 0)
+              );
+    ---backround-protfolio: rgba(102, 51, 153, 0.252);
+
+        /*box-shadow*/
+        --box-shadow-night: 
+                rgb(0 0 0) 0px 1px 1px, 
+                rgb(0 0 0) 0px 2px 2px, 
+                rgb(0 0 0) 0px 4px 4px, 
+                rgb(0 0 0) 0px 8px 8px, 
+                rgb(0 0 0) 0px 16px 16px;
+        --box-shadow-night-nave-top: 
+                rgb(0 0 0 / 0%) 0px 1px 1px, 
+                rgb(0 0 0 / 0%) 0px 2px 2px, 
+                rgb(0 0 0 / 0%) 0px 4px 4px, 
+                rgb(0 0 0 / 0%) 0px 8px 8px, 
+                rgb(0 0 0 / 6%) 0px 16px 16px;
+
+        ---box-shadow: rgba(0, 0, 0, 0.274) 0px 1px 1px,
+                rgba(0, 0, 0, 0.274) 0px 2px 2px,
+                rgba(0, 0, 0, 0.274) 0px 4px 4px,
+                rgba(0, 0, 0, 0.274) 0px 8px 8px,
+                rgba(0, 0, 0, 0.274) 0px 16px 16px;
+
+        ---box-shadow-top: 
+                rgba(0, 0, 0, 0.02) 0px 1px 1px,
+                rgba(0, 0, 0, 0.02) 0px 2px 2px,
+                rgba(0, 0, 0, 0.02) 0px 4px 4px,
+                rgba(0, 0, 0, 0.02) 0px 8px 8px,
+                rgba(0, 0, 0, 0.02) 0px 16px 16px;
+
+        ---box-shadow-btn-dash-bord: rgba(0, 0, 0, 0.531) 0px 1px 1px,
+                rgba(0, 0, 0, 0.531) 0px 2px 2px,
+                rgba(0, 0, 0, 0.531) 0px 4px 4px,
+                rgba(0, 0, 0, 0.531) 0px 8px 8px,
+                rgba(0, 0, 0, 0.531) 0px 16px 16px;
+
+        --box-shadow-click: rgba(255, 255, 255, 0.07) 0px 1px 1px,
+                rgba(255, 255, 255, 0.027) 0px 2px 2px,
+                rgba(255, 255, 255, 0.027) 0px 4px 4px,
+                rgba(255, 255, 255, 0.027) 0px 8px 8px,
+                rgba(255, 255, 255, 0.027) 0px 16px 16px;
+
+        --box-shadow-btn-follow: 
+                rgba(255, 238, 0, 0.127) 0px 1px 1px,
+                rgba(119, 255, 0, 0.094) 0px 2px 2px,
+                rgba(230, 0, 255, 0.118) 0px 3px 3px,
+                rgba(42, 24, 24, 0.1) 0px 4px 4px,
+                rgba(93, 0, 255, 0.098) 0px 5px 5px;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+span,
+small,
+b{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+
+}
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+.logo_name{
+    width: 100%;
+    height: 2rem;
+    background: rgba(0, 103, 106, 0.753);
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -1rem;
+}
+.logo_image{
+    color: aliceblue;
+}
+.bienvenu{
+    margin-top: -1rem;
+}
+.name_logo{
+    color: aliceblue;
+    font-size: 19px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+#map{
+    z-index: 1;
+}
+
+.leaflet-left {
+    right: 2rem !important;
+    left: auto;
+    bottom: 5rem !important;
+    top: auto;
+}
+.bottom_card{
+    background: var(---background-card_bg);
+    margin-top: -0.5rem;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+}
+
+
+.body_child{
+    background: var(---background-card_bg);
+}
+
+.background_linear{
+    background: rgb(34,193,195);
+    background: -moz-linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.396796218487395) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.396796218487395) 100%);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.396796218487395) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endColorstr="#fdbb2d",GradientType=1);
+}
+
+span{
+    color: var(--color-white);
+}
+small{
+    color: var(--color-light);
+}
+
+.bg-image {
+    content: "";
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
